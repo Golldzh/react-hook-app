@@ -50,7 +50,7 @@ function Posts() {
   return (
     <div className="App">
       <MyButton style = {{display: 'block' ,margin: '0 auto'}}  onClick={() => setModal(true)}>
-          Создать пользователя
+          Создать пост
       </MyButton>
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm create={createPost}/>
@@ -67,7 +67,7 @@ function Posts() {
           <Loader/>
         </div>
         : 
-        <PostList remove={removePost} posts={sortedAndSearchedPosts} title ={'Список постов 1'}/>
+        <PostList remove={removePost} posts={sortedAndSearchedPosts} title ={'Список постов'}/>
       }
       <Pagination page={page} changePage={changePage} totalPages={totalPages}/>
     </div>  

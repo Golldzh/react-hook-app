@@ -72,5 +72,7 @@
 }
 
 .navbar__items {
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
 }
