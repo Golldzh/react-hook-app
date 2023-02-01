@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import MyButton from '../components/UI/button/MyButton';
 import MyInput from '../components/UI/input/MyInput';
-import { AuthContext } from '../context';
+import {useDispatch} from 'react-redux';
+import { setIsAuth } from '../toolkitRedux/authReduser';
+
 const Login = () => {
-  const{isAuth, setIsAuth} = useContext(AuthContext);
+  const dispatch = useDispatch();
   const login = (e) => {
     e.preventDefault();
-    setIsAuth(true)
     localStorage.setItem('auth', 'true')
+    dispatch(setIsAuth())
   }
   return (
     <div>

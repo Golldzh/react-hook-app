@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { AuthContext } from '../../../context';
+import {useDispatch} from 'react-redux'
+import { setIsAuth } from '../../../toolkitRedux/authReduser';
 import MyButton from '../button/MyButton';
 
 const Navbar = () => {
-  const{isAuth, setIsAuth} = useContext(AuthContext);
+  const dispatch = useDispatch();
+
   const logout = (e) => {
     e.preventDefault();
-    setIsAuth(false)
+    dispatch(setIsAuth())
     localStorage.removeItem('auth')
   }
   return (
